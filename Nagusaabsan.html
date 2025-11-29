@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagu Saabsan - GaariParts</title>
+
+    <!-- Stilmall för sidan -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+    <!-- ================= NAVBAR / MENY ================= -->
+    <nav class="navbar" aria-label="Huvudmeny">
+
+        <!-- Logo överst till vänster -->
+        <div class="nav-logo">
+            <a href="index.html#top">
+                <img src="images/1.png" alt="GaariParts Logo">
+            </a>
+        </div>
+
+        <!-- Hamburgermeny för mobil -->
+        <button class="nav-toggle" aria-label="Öppna meny">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Länkar i navbaren -->
+        <ul class="nav-menu">
+            <li><a href="index.html#top">Guriga</a></li>
+            <li><a href="QaybahaBaabuurta.html">Qaybaha Baabuurta</a></li>
+            <li><a href="QaybahaBajaajka.html">Qaybaha Bajaaj</a></li>
+            <li><a href="QaybahaMootooyinka.html">Qaybaha Mootooyinka</a></li>
+            <li><a href="QaybahaGaadiidkaWeyn.html">Qaybaha Gaadiidka Weyn</a></li>
+            <li><a href="index.html#contact">Nala Soo Xiriir</a></li>
+            <li><a href="index.html#how">Sida Ay U Shaqeyso</a></li>
+            <li><a href="Nagusaabsan.html#top">Nagu Saabsan</a></li>
+            <li><a href="index.html#contact">Su’aalo</a></li>
+            <li><a href="waxacusub.html">Waxa Cusub</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= INNEHÅLL / MAIN ================= -->
+    <main>
+
+        <!-- ⭐ HERO – samma stil som övriga sidor ⭐ -->
+        <section class="hero">
+            <a href="index.html">
+                <img src="images/4.png" class="hero-logo" alt="GaariParts Logo">
+            </a>
+
+            <h1>Nagu Saabsan</h1>
+            <p>
+                Halkan waxaad ka akhrisan kartaa sheekada GaariParts, fikradda ka dambaysa
+                iyo ujeeddada aan u adeegayno macaamiisha ku sugan Soomaaliya.
+            </p>
+
+            <a href="#about" class="hero-btn">Akhri Sheekadeena</a>
+        </section>
+
+        <!-- ========== ARTIKEL: NAGU SAABSAN ========== -->
+        <section class="new-article" id="about">
+            <h2>Nagu Saabsan – GaariParts</h2>
+
+            <p>
+                GaariParts waa websayt iyo adeeg loo sameeyay dadka Soomaaliyeed ee doonaya 
+                inay si fudud uga soo iibsadaan qaybaha baabuurta, bajaajka iyo mootooyinka 
+                Dubai, kadibna lagu geeyo Soomaaliya.
+            </p>
+
+            <p>
+                Fikradda waxa bilaabay Shanle, oo ku nool Sweden, ka dib markii uu arkay 
+                in dad badan oo Soomaaliya jooga ay dhib ku qabaan helidda qaybo sax ah, 
+                tayo leh, oo lagu kalsoonaan karo. Ujeeddadu waa in la helo qof kaa 
+                caawiya raadinta, hubinta iyo soo dirista qaybaha adiga oo aan wakhti 
+                badan ku lumin suuqyo kala duwan.
+            </p>
+
+            <p>GaariParts waxa uu xooga saarayaa:</p>
+
+            <ul>
+                <li>In macluumaadka qaybaha iyo qiimuhu noqdaan kuwo cad oo la fahmi karo.</li>
+                <li>In xiriirka lala yeesho macaamilka uu noqdo mid dhow, oo la is fahmo.</li>
+                <li>In qaybaha laga soo xulo Dubai meelo lagu kalsoon yahay.</li>
+            </ul>
+
+            <p>
+                Websayt-kan hadda waa marxalad horumar ah. Waxaan si tartiib ah ugu 
+                daraynaa qaybo cusub, tusaalooyin iyo faahfaahin ku saabsan sida 
+                dalbashada u shaqeyso. Mustaqbalka dhow, waxaan rabnaa in aad ka 
+                dooran karto qaybo badan oo kala duwan, kadibna si toos ah noogu 
+                soo dirto dalabkaaga.
+            </p>
+
+            <p>
+                Haddii aad haysato talo ama fikrad ku saabsan sida aan u hagaajin karno 
+                GaariParts, mar walba waad nala wadaagi kartaa adiga oo isticmaalaya 
+                bogagga “Nala Soo Xiriir” ama “Waxa Cusub”.
+            </p>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>© 2025 GaariParts – Qaybaha Baabuurta ka yimaada Dubai ilaa Soomaaliya.</p>
+    </footer>
+
+    <!-- ================= SCRIPT: MOBILMENY ================= -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.querySelector(".nav-toggle");
+            const menu = document.querySelector(".nav-menu");
+
+            if (!toggle || !menu) return;
+
+            // Klick på hamburgermenyn = öppna / stäng
+            toggle.addEventListener("click", (event) => {
+                event.stopPropagation();
+                menu.classList.toggle("show");
+            });
+
+            // Stäng menyn när man klickar på en länk i menyn (bra för mobil)
+            document.querySelectorAll(".nav-menu a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    menu.classList.remove("show");
+                });
+            });
+
+            // Klick någon annanstans på sidan = stäng menyn
+            document.addEventListener("click", (event) => {
+                const isClickInsideMenu = menu.contains(event.target);
+                const isClickOnToggle = toggle.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

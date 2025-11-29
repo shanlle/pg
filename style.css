@@ -1,0 +1,873 @@
+/* ===========================
+   GLOBAL RESET & BASSTIL
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    line-height: 1.5;
+}
+
+/* En enkel container & sektion-padding för flera sidor */
+.section-padding {
+    padding: 60px 20px 80px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+    background-color: #0A2A57;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Logo-bild i navbaren */
+.nav-logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Menylista (desktop) */
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nav-menu li a:hover {
+    background-color: #F47A24;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+}
+
+/* ===========================
+   HAMBURGERMENY (KNAPP)
+=========================== */
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+    background-color: #0A2A57;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    background-color: #F47A24;
+    color: #ffffff;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-btn:hover {
+    background-color: #ff9347;
+}
+
+/* Hero-logga (stora bilden) */
+.hero-logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   KATEGORIER (INDEX)
+=========================== */
+
+.categories {
+    padding: 60px 20px 80px;
+    background-color: #ffffff;
+}
+
+.categories h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0A2A57;
+}
+
+.categories-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* Rutnät med kategorikort */
+.category-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Själva kortet (standardkategori) */
+.category-card {
+    background-color: #0A2A57;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Ikon i kategorikortet (emojis, etc) */
+.category-card .icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.category-card h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.category-card p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Hover-effekt på kategorikort */
+.category-card:hover {
+    background-color: #F47A24;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* ===========================
+   PRODUKTLISTA (QAYBAHABAABUURTA)
+   Blocket-liknande lista
+=========================== */
+
+.products-section {
+    background: #f5f7fb;
+}
+
+.products-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0A2A57;
+}
+
+/* Wrapper för alla produkter */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 25px;
+}
+
+/* En produkt-annons */
+.product-item {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) 1fr;
+    gap: 1.5rem;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Bildkolumnen */
+.product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Stor bild i kortet */
+.product-main-img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    cursor: pointer; /* visar att bilden är klickbar */
+}
+
+/* Thumbnails under produktbilden */
+.product-thumbs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Enskild thumbnail */
+.thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    object-fit: cover;
+    transition: 0.2s;
+    opacity: 0.85;
+}
+
+.thumb:hover {
+    opacity: 1;
+}
+
+.thumb.active {
+    border-color: #F47A24;
+}
+
+/* Höger sida – text/info */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: #0A2A57;
+    font-weight: 700;
+}
+
+.product-meta {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 12px;
+}
+
+/* Pris + knapp längst ner */
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #F47A24;
+}
+
+.price-value {
+    font-size: 18px;
+}
+
+/* Knapp inne i produktkortet */
+.product-btn {
+    background-color: #0A2A57;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 6px 14px rgba(10,42,87,0.4);
+    white-space: nowrap;
+}
+
+.product-btn:hover {
+    background-color: #143b73;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(10,42,87,0.5);
+}
+
+/* ===========================
+   SIDA AY U SHAQEYSO
+=========================== */
+
+.how-it-works {
+    padding: 60px 20px 80px;
+    background-color: #0A2A57;
+    color: #ffffff;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.how-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+}
+
+.how-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.how-card {
+    background-color: #073060;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Numret (1, 2, 3) i cirkel */
+.step-number {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #F47A24;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    line-height: 36px;
+}
+
+.how-card h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.how-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ===========================
+   NALA SOO XIRIIR
+=========================== */
+
+.contact {
+    padding: 60px 20px 70px;
+    background-color: #ffffff;
+    color: #0A2A57;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* Rutnät för kontakt-kort (tel, WhatsApp, email) */
+.contact-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background-color: #0A2A57;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.contact-card h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.contact-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #F47A24;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.contact-btn:hover {
+    background-color: #ff9347;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+    background-color: #0A2A57;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+/* ===========================
+   MOBIL: NAV & LAYOUT
+=========================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #0A2A57;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0 1rem;
+        margin: 0;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Gör grid-sektioner en kolumn på mobil för bättre läsbarhet */
+    .category-grid,
+    .how-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Produktlista: bild överst, text under på mobil */
+    .product-item {
+        grid-template-columns: 1fr;
+    }
+
+    .product-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ===========================
+   NAGU SAABSAN – ARTIKEL
+=========================== */
+
+.new-article {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.new-article h2 {
+    color: #0A2A57;
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.new-article p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   WAXA CUSUB – KORT / GRID
+=========================== */
+
+.updates-grid {
+    max-width: 1200px;
+    margin: 60px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 2.1fr;
+    gap: 20px;
+}
+
+/* Grundstil för alla "update"-kort */
+.update-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    color: #333333;
+}
+
+.update-card h2,
+.update-card h3 {
+    color: #0A2A57;
+    margin-bottom: 12px;
+}
+
+.update-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.update-card ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.update-card ul li {
+    margin-bottom: 6px;
+}
+
+/* Större huvudkortet (sträcker sig över 2 rader) */
+.update-main {
+    grid-row: span 2;
+}
+
+/* Badge "Qoraal Cusub" */
+.badge {
+    display: inline-block;
+    background-color: #F47A24;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Mobil: gör grid till en kolumn */
+@media (max-width: 768px) {
+    .updates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .update-main {
+        grid-row: auto;
+    }
+}
+
+/* ===========================
+   FEEDBACK / FIKRAD FORM
+=========================== */
+
+.feedback-box {
+    max-width: 900px;
+    margin: 50px auto 90px;
+    background: #ffffff;
+    padding: 28px 26px 30px;
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    border-left: 6px solid #F47A24;
+    text-align: center;
+}
+
+/* Header med ikon + text */
+.feedback-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.feedback-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(244,122,36,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.feedback-box h2 {
+    color: #0A2A57;
+    font-size: 24px;
+    margin: 0 0 4px;
+}
+
+.feedback-subtitle {
+    margin: 0;
+    color: #555555;
+    font-size: 15px;
+}
+
+/* Layout för formuläret */
+.feedback-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+/* Namn + WhatsApp i två kolumner på desktop */
+.feedback-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Textfält */
+.feedback-box input[type="text"] {
+    flex: 1 1 200px;
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Textarea */
+.feedback-box textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 13px 12px;
+    border-radius: 12px;
+    border: 1px solid #dddddd;
+    font-size: 15px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Fokus-stil för inputs & textarea */
+.feedback-box input[type="text"]:focus,
+.feedback-box textarea:focus {
+    border-color: #F47A24;
+    box-shadow: 0 0 6px rgba(244,122,36,0.3);
+}
+
+/* Knapp för att skicka feedback */
+.feedback-btn {
+    align-self: flex-start;
+    background-color: #F47A24;
+    color: #ffffff;
+    padding: 11px 26px;
+    font-size: 16px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+    transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 6px 14px rgba(244,122,36,0.4);
+}
+
+.feedback-btn:hover {
+    background-color: #ff9347;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(244,122,36,0.45);
+}
+
+/* Tack-meddelande (visas via JS) */
+.thanks-message {
+    margin-top: 18px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #E6F7EC;
+    color: #0A8A3A;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #9AD3AE;
+    display: none;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Mobilanpassning för feedback-box */
+@media (max-width: 600px) {
+    .feedback-box {
+        margin: 35px 16px 70px;
+        padding: 22px 18px 24px;
+    }
+
+    .feedback-header {
+        align-items: flex-start;
+    }
+
+    .feedback-box h2 {
+        font-size: 20px;
+    }
+
+    .feedback-subtitle {
+        font-size: 14px;
+    }
+
+    .feedback-btn {
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+    }
+}
+
+/* Enkel fade-in-animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   LIGHTBOX FÖR STOR BILD
+=========================== */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+/* Pilen vänster/höger i lightbox */
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-arrow.left {
+    left: 20px;
+}
+
+.lightbox-arrow.right {
+    right: 20px;
+}

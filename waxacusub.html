@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waxa Cusub - GaariParts</title>
+
+    <!-- Stilmall för sidan -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+    <!-- ================= NAVBAR / MENY ================= -->
+    <nav class="navbar" aria-label="Huvudmeny">
+
+        <!-- Logo överst till vänster -->
+        <div class="nav-logo">
+            <a href="index.html#top">
+                <img src="images/1.png" alt="GaariParts Logo">
+            </a>
+        </div>
+
+        <!-- Hamburgermeny för mobil -->
+        <button class="nav-toggle" aria-label="Öppna meny">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Länkar i navbaren -->
+        <ul class="nav-menu">
+            <li><a href="index.html#top">Guriga</a></li>
+            <li><a href="QaybahaBaabuurta.html">Qaybaha Baabuurta</a></li>
+            <li><a href="QaybahaBajaajka.html">Qaybaha Bajaaj</a></li>
+            <li><a href="QaybahaMootooyinka.html">Qaybaha Mootooyinka</a></li>
+            <li><a href="QaybahaGaadiidkaWeyn.html">Qaybaha Gaadiidka Weyn</a></li>
+            <li><a href="index.html#contact">Nala Soo Xiriir</a></li>
+            <li><a href="index.html#how">Sida Ay U Shaqeyso</a></li>
+            <li><a href="Nagusaabsan.html#top">Nagu Saabsan</a></li>
+            <li><a href="index.html#contact">Su'aalo</a></li>
+            <li><a href="waxacusub.html">Waxa Cusub</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= INNEHÅLL / MAIN ================= -->
+    <main>
+
+        <!-- ⭐ HERO – samma stil som de andra sidorna ⭐ -->
+        <section class="hero">
+            <a href="index.html">
+                <img src="images/4.png" class="hero-logo" alt="GaariParts Logo">
+            </a>
+
+            <h1>Waxa Cusub</h1>
+            <p>Halkan waxaad ka arki doontaa wararka cusub, qaybo cusub iyo fikradaha cusub ee GaariParts.</p>
+
+            <a href="#updates" class="hero-btn">Eeg Waxa Cusub</a>
+        </section>
+
+        <!-- ⭐ WAXA CUSUB – MODERN LAYOUT ⭐ -->
+        <section class="updates-grid" id="updates">
+
+            <!-- STORA HUVUDKORTET -->
+            <article class="update-card update-main">
+                <span class="badge">GaariParts</span>
+                <h2>Waxa Cusub – GaariParts</h2>
+                <p>
+                    GaariParts wuxuu ku jiraa horumar joogto ah, waxaana hadda ka shaqaynaynaa inaan soo kordhino
+                    qaybaha (kategoriyada) ay macaamiisheenu u baahan yihiin. Mustaqbalka dhow, “Waxa Cusub” wuxuu
+                    ku tusi doonaa dhammaan waxyaabaha cusub ee aan ku darnay – qaybo cusub, adeegyo cusub iyo
+                    warbixinno muhiim ah oo kuu fududeynaya inaad hesho qaybaha aad rabto.
+                </p>
+                <p>
+                    Waxaan mar walba maskaxda ku haynaa macaamiisha. Haddii aad hayso fikrad, qayb maqan, ama wax aad
+                    rabto inaan ku darno qaybaha, waxaad si fudud noogu soo diri kartaa email. Kaalay oo nala wadaag
+                    fikradahaaga iyo jawaabcelintaada, si aan GaariParts u sii hormarino oo u noqoto mid kuu shaqeeya adiga.
+                </p>
+            </article>
+
+            <!-- KORT 2 -->
+            <article class="update-card">
+                <h3>Maxaad filan kartaa?</h3>
+                <p>Mustaqbalka dhow, boggan wuxuu ku tusi doonaa:</p>
+                <ul>
+                    <li>Qaybo cusub oo aan ku darno qaybooyinka (kategoriyada).</li>
+                    <li>Dalabyo gaar ah oo loogu talagalay macaamiisha Soomaaliya.</li>
+                    <li>Warbixinno kooban oo ka hadlaya adeegyo cusub.</li>
+                </ul>
+            </article>
+
+            <!-- KORT 3 -->
+            <article class="update-card">
+                <h3>Nala wadaag fikradahaaga</h3>
+                <p>
+                    Haddii aad aragto qayb maqan, ama aad rabto qayb gaar ah oo aad ka dalbato Dubai, waxaad si fudud
+                    noogu soo diri kartaa email ama WhatsApp.
+                </p>
+                <p>
+                    Fikrad kasta waa muhiim – waxaan rabnaa in GaariParts uu noqdo goob si fudud kuu fahmaysa adiga
+                    oo ku sugan Soomaaliya.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- ⭐ FIKRAD / FEEDBACK FORM ⭐ -->
+        <section class="feedback-box">
+            <div class="feedback-header">
+                <span class="feedback-icon">💡</span>
+                <div>
+                    <h2>Nala Soo Xiriir – Soo Jeedi Fikrad Cusub</h2>
+                    <p class="feedback-subtitle">
+                        Halkan ku qor fikradaada, qayb maqan, ama soo jeedin cusub oo ku saabsan GaariParts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulär som skickas till Google Apps Script -->
+            <form id="feedbackForm">
+                <div class="feedback-row">
+                    <input type="text" name="name" id="name" placeholder="Magacaaga" required>
+                    <input type="text" name="whatsapp" id="whatsapp" placeholder="WhatsApp / Tel (ikhtiyaari)">
+                </div>
+
+                <textarea name="message" id="message" placeholder="Qor fikradaada halkan..." required></textarea>
+
+                <button type="submit" class="feedback-btn">Dir Fikrad Cusub</button>
+            </form>
+
+            <p id="thanks-message" class="thanks-message" style="display:none;">
+                Mahadsanid! Fikradaada waa nala gaartay. Waan eegi doonna sida aan ugu dari karno GaariParts.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>© 2025 GaariParts – Qaybaha Baabuurta ka yimaada Dubai ilaa Soomaaliya.</p>
+    </footer>
+
+    <!-- ================= SCRIPT: MENY + FEEDBACK ================= -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            /* ------- HAMBURGARMENY / NAV ------- */
+            const toggle = document.querySelector(".nav-toggle");
+            const menu = document.querySelector(".nav-menu");
+
+            if (toggle && menu) {
+                // Klick på hamburgermenyn = öppna / stäng
+                toggle.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                    menu.classList.toggle("show");
+                });
+
+                // Stäng menyn när man klickar på en länk (bra för mobil)
+                document.querySelectorAll(".nav-menu a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        menu.classList.remove("show");
+                    });
+                });
+
+                // Klick någon annanstans på sidan = stäng menyn
+                document.addEventListener("click", (event) => {
+                    const isClickInsideMenu = menu.contains(event.target);
+                    const isClickOnToggle = toggle.contains(event.target);
+
+                    if (!isClickInsideMenu && !isClickOnToggle) {
+                        menu.classList.remove("show");
+                    }
+                });
+            }
+
+            /* ------- FEEDBACK-FORMULÄR ------- */
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyF9_gtse7Bm2_Z9b3zqS7qg8snHP-nz5q9emqgTACVKkhjmZiTbKAOkP2NaHO4SXY9UA/exec";
+            // ↑ Byt ut ovan rad om du skapar ett nytt Apps Script
+
+            const form = document.getElementById("feedbackForm");
+            const thanks = document.getElementById("thanks-message");
+
+            if (form) {
+                form.addEventListener("submit", async (e) => {
+                    e.preventDefault(); // stoppa vanlig formulär-postning
+
+                    const formData = new FormData(form);
+
+                    try {
+                        const res = await fetch(SCRIPT_URL, {
+                            method: "POST",
+                            body: formData
+                        });
+
+                        if (!res.ok) {
+                            throw new Error("Nätverksfel");
+                        }
+
+                        // Om allt gick bra: visa tack-meddelande och töm formuläret
+                        if (thanks) {
+                            thanks.style.display = "block";
+                        }
+                        form.reset();
+                    } catch (err) {
+                        alert("Kunde inte skicka fikradaada just nu. Försök gärna igen mar danbe.");
+                        console.error(err);
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
